@@ -1,0 +1,21 @@
+﻿@model MyMVC_APP.Models.NewCustomerViewModel
+@{
+    ViewBag.Title = "NewCustomer";
+}
+@using (Html.BeginForm("CreateCusomer", "Customer"))
+{
+    <h2>CreateCusomer</h2>
+    <div>
+
+        <label>Name:</label>
+
+        @Html.TextBoxFor(m => m.Customer.name)
+    </div>
+    <div>
+
+        <label>age:</label>
+
+        @Html.DropDownListFor(m=>m.Customer.MembershipTypeId,new SelectList(Model.membershiptype, "ID","Title"),"اختر عضوية")
+    </div>
+    <button >Save</button>
+}
